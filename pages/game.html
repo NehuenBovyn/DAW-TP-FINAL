@@ -8,11 +8,43 @@
   
 </head>
 <body>
+  <div class="popup-overlay">
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2>Reglas</h2>
+        <p>1. Ordena letras en una cuadrícula y comienza el temporizador.</p>
+        <p>2. Forma palabras de al menos tres letras, conectadas horizontal, vertical o diagonalmente.</p>
+        <p>3. Acepta formas singulares y plurales, excluyendo nombres propios.</p>
+        <p>4. Ganas puntos según la longitud de la palabra.</p>
+        <p>5. Evita penalizaciones usando palabras reales.</p>
+        <p>6. Suma puntos hasta que termine el tiempo.</p>
+      </div>
+    </div>
+  </div>
   <header>
-    <h1>Juego Boogle</h1>
+    <h1><a href="../index.html">Juego Boogle</a></h1>
   </header>
   <main>
-    <section class="main-section">
+    <section class="main-contain">
+      <div class="player-info">
+        <div>
+          <label for="player-name">Nombre del jugador:</label>
+          <input type="text" id="player-name" name="player-name" required>
+          <div id="error-message" class="error-message"></div>
+        </div>
+        <div>
+          <label for="time-limit">Tiempo de juego:</label>
+          <select id="time-limit" name="time-limit">
+            <option value="60">1 minuto</option>
+            <option value="120">2 minutos</option>
+            <option value="180">3 minutos</option>
+          </select>
+        </div>
+        <div class="div-btn-start">
+          <button class="button-start">Comenzar</button>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer-content">
@@ -21,6 +53,7 @@
       <button id="github-btn" >Ver en GitHub</button>
   </footer>
   <script src="/js/script.js" ></script>
+  <script src="/js/game.js" ></script>
 </body>
 
 </html>
