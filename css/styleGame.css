@@ -1,0 +1,15 @@
+.navbar{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lista-navbar{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.navbar a{
+  text-decoration: none;
+}
