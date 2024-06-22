@@ -1,27 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
   var overlay = document.querySelector('.popup-overlay');
-  function mostrarPopup() {
+  function showPopUp() {
       overlay.style.display = 'block';
   }
 
-  function cerrarPopup() {
+  function closePopUp() {
     overlay.style.display = 'none';
   }
-  mostrarPopup();
+  showPopUp();
   overlay.addEventListener('click', function(event) {
     
     if (event.target === overlay) {
-      cerrarPopup();
+      closePopUp();
     }
   });
   var closeButton = document.querySelector('.close-popup');
   if (closeButton) {
     closeButton.addEventListener('click', function() {
-      cerrarPopup();
+      closePopUp();
     });
   }
   var buttonStart = document.querySelector('.button-start');
-
+  var playerInfo = document.querySelector('.player-info');
+  var gameTable = document.querySelector('.game-table');
   buttonStart.addEventListener('click', function() {
       var playerName = document.getElementById('player-name').value;
       var timeLimit = document.getElementById('time-limit').value;
@@ -33,5 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       localStorage.setItem('playerName', playerName);
       localStorage.setItem('timeLimit', timeLimit);
+
+      playerInfo.style.display = 'none';
+      gameTable.style.display = 'flex';
   });
 });

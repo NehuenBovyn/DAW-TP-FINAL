@@ -13,12 +13,10 @@
       <div class="popup-content">
         <span class="close-popup">&times;</span>
         <h2>Reglas</h2>
-        <p>1. Ordena letras en una cuadrícula y comienza el temporizador.</p>
-        <p>2. Forma palabras de al menos tres letras, conectadas horizontal, vertical o diagonalmente.</p>
-        <p>3. Acepta formas singulares y plurales, excluyendo nombres propios.</p>
-        <p>4. Ganas puntos según la longitud de la palabra.</p>
-        <p>5. Evita penalizaciones usando palabras reales.</p>
-        <p>6. Suma puntos hasta que termine el tiempo.</p>
+        <p>1. Forma palabras de al menos tres letras, conectadas horizontal, vertical o diagonalmente.</p>
+        <p>2. Ganas puntos según la longitud de la palabra.</p>
+        <p>3. Evita penalizaciones usando palabras reales.</p>
+        <p>4. Ingresa tu nombre y el tiempo limite.</p>
       </div>
     </div>
   </div>
@@ -45,6 +43,60 @@
           <button class="button-start">Comenzar</button>
         </div>
       </div>
+      <div class="game-table">
+        <div class="col-game-1 tables-game">
+          <h2 class="title-table">Mi puntuación actual</h2>
+          <div>
+            <label for="points">Points:</label>
+            <span id="points">0</span>
+          </div>
+          <h2 class="title-table">Tabla de puntuaciones</h2>
+          <table id="score-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Puntos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-game-2 tables-game">
+          <h2 class="title-table">Juego</h2>
+          <div class="container">
+            <h1>Boggle Game</h1>
+            <div id="grid-container" class="grid-container">
+            </div>
+            <div>
+              <button id="shuffle-btn">Shuffle Grid</button>
+              <button id="submit-word-btn">Submit Word</button>
+              <div id="submit-message" class="message"></div>
+            </div>
+            <div>
+                <label for="word">Current Word:</label>
+                <input type="text" id="word" readonly>
+            </div>
+           
+        </div>
+        </div>
+        <div class="col-game-3">
+          <div class="tables-game">
+            <h2 class="title-table">Temporizador</h2>
+            <div id="timer">...</div>
+          </div>
+          <div class="tables-game">
+            <h2 class="title-table">Palabras encontradas</h2>
+            <ul id="words-found">
+              <li>...</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer-content">
@@ -57,6 +109,7 @@
 </footer>
   <script src="/js/script.js" ></script>
   <script src="/js/game.js" ></script>
+  <script src="/js/boogle.js" ></script>
 </body>
 
 </html>
