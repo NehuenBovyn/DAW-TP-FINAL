@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var selectedButtons = [];
   var wordsFound = [];
   var shuffleMessage = document.getElementById('shuffle-message');
-  var submitMessage = document.getElementById('submit-message');
 
   function generateGrid() {
     grid.innerHTML = '';
@@ -28,11 +27,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleButtonClick(button) {
+    var letter = button.textContent;
     if (selectedButtons.length === 0 || isValidMove(button)) {
-      var letter = button.textContent;
       addToWord(letter);
       selectedButtons.push(button);
+      grid.querySelectorAll('.grid-item').forEach(function (btn) {
+        btn.classList.remove('last-selected');
+      });
+      button.classList.add('selected');
+      button.classList.add('last-selected');
+
       button.disabled = true;
+      grid.childNodes.forEach(function (btn) {
+        if (selectedButtons.includes(btn)) {
+          btn.disabled = true;
+        } else {
+          btn.disabled = false;
+        }
+      });
     } else {
       showSubmitMessage('Movimiento inválido.');
     }
@@ -69,52 +81,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function submitWord() {
     var word = wordInput.value.toLowerCase().trim();
-    if (word.length >= 3) {
-      if (wordsFound.indexOf(word) !== -1) {
-        showSubmitMessage('La palabra ya fue descubierta.');
-        clearSelectedButtons();
-        return;
-      }
-      var uniqueLetters = new Set(word);
-      if (uniqueLetters.size === word.length) {
-        var apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + word;
-        fetch(apiUrl)
-          .then(function (response) {
-            if (response.ok) {
-              return response.json();
-            } else {
-              throw new Error('La palabra no existe.');
-            }
-          })
-          .then(function () {
-            var pointGets = calculatePoints(word.length);
-            points += pointGets;
-            pointsDisplay.textContent = points;
-            showSubmitMessage(
-              'La palabra "' +
-                word +
-                '" existe! Sumas: ' +
-                pointGets +
-                ' puntos.'
-            );
-            wordsFound.push(word);
-            updateWordsFoundList();
-            clearSelectedButtons();
-          })
-          .catch(function (error) {
-            console.error(error);
-            points -= 1;
-            pointsDisplay.textContent = points;
-            showSubmitMessage(
-              'La palabra "' + word + '" no existe. Restas: 1 punto.'
-            );
-            clearSelectedButtons();
-          });
-      }
-    } else {
+    if (word.length < 3) {
       showSubmitMessage('La palabra debe contener al menos 3 letras.');
       clearSelectedButtons();
+      return;
     }
+    if (wordsFound.includes(word)) {
+      showSubmitMessage('La palabra ya fue descubierta.');
+      clearSelectedButtons();
+      return;
+    }
+    var apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + word;
+    fetch(apiUrl)
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('La palabra no existe.');
+        }
+      })
+      .then(function () {
+        var pointGets = calculatePoints(word.length);
+        points += pointGets;
+        pointsDisplay.textContent = points;
+        showSubmitMessage(
+          'La palabra "' + word + '" existe! Sumas: ' + pointGets + ' puntos.'
+        );
+        wordsFound.push(word);
+        updateWordsFoundList();
+        clearSelectedButtons();
+      })
+      .catch(function (error) {
+        console.error(error);
+        points -= 1;
+        pointsDisplay.textContent = points;
+        showSubmitMessage(
+          'La palabra "' + word + '" no existe. Restas: 1 punto.'
+        );
+        clearSelectedButtons();
+      });
   }
 
   function calculatePoints(wordLength) {
@@ -154,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function clearSelectedButtons() {
     selectedButtons.forEach(function (button) {
       button.disabled = false;
+      button.classList.remove('selected', 'last-selected');
     });
     selectedButtons = [];
     wordInput.value = '';
@@ -161,11 +167,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   shuffleBtn.addEventListener('click', function () {
     generateGrid();
+    wordInput.value = '';
     shuffleMessage.classList.add('show-message');
     setTimeout(function () {
       shuffleMessage.classList.remove('show-message');
     }, 2000);
-    wordInput.value = '';
   });
 
   submitWordBtn.addEventListener('click', function () {
@@ -183,25 +189,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var scores = JSON.parse(localStorage.getItem('scores')) || [];
     scores.push(scoreData);
     localStorage.setItem('scores', JSON.stringify(scores));
-
-    // Mostrar el modal de tiempo agotado con la información recolectada
     var timeUpModal = document.getElementById('time-up-modal');
     var playerSpan = document.getElementById('time-up-player');
     var pointsSpan = document.getElementById('time-up-points');
     var timestampSpan = document.getElementById('time-up-timestamp');
-
     playerSpan.textContent = playerName;
     pointsSpan.textContent = points;
     timestampSpan.textContent = currentTime;
-
     timeUpModal.classList.add('active');
   });
 
-  // Función para reiniciar el juego al hacer clic en el botón 'Empezar de Nuevo'
   var restartBtn = document.getElementById('restart-btn');
   restartBtn.addEventListener('click', function () {
-    // Lógica para reiniciar el juego según sea necesario
-    // Por ejemplo, resetear puntos, palabras encontradas, etc.
     points = 0;
     pointsDisplay.textContent = points;
     wordsFound = [];
