@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var nombreError = document.getElementById('nombreError');
     var correoError = document.getElementById('correoError');
     var mensajeError = document.getElementById('mensajeError');
+    var nombreRealTime = document.getElementById('nombreRealTime');
 
+    nombre.addEventListener('input', function() {
+        nombreRealTime.textContent = nombre.value;
+    });
+    
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
