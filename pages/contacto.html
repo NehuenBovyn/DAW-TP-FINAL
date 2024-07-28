@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>TP FINAL DAW</title>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <link rel="stylesheet" type="text/css" href="../css/styleContacto.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP FINAL DAW</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleContacto.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="lista-navbar">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="pages\puntuacion.html">Puntuación</a></li>
-        <li><a href="pages\contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h1>Contáctenos</h1>
-    </section>
-  </main>
-  <footer>
-  </footer>
+    <header>
+        <nav class="navbar">
+            <ul class="lista-navbar">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/puntuacion.html">Puntuación</a></li>
+                <li><a href="../pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contacto">
+            <h1>Contáctenos <span id="nombreRealTime"></span></h1>
+        </section>
+        <section class="contacto" id="contactoFormulario">
+            <form action="mailto:destinatario@correo.com" method="post" id="formulario" novalidate>
+                <div class="form-group">
+                    <label for="nombreid">Nombre:</label>
+                    <input type="text" id="nombreid" name="nombre" placeholder="Ingrese su nombre">
+                    <p class="error-message" id="nombreError"></p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="correoid">Email:</label>
+                    <input type="email" id="correoid" name="email" placeholder="Ingrese su email">
+                    <p class="error-message" id="correoError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensajeid">Mensaje:</label>
+                    <textarea name="mensaje" id="mensajeid" placeholder="Ingrese su mensaje"></textarea>
+                    <p class="error-message" id="mensajeError"></p>
+                </div>
+                    
+                <div class="button-container">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="../js/scriptContactanos.js"></script>
+</body>
+</html>
