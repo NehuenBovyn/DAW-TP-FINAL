@@ -1,45 +1,44 @@
 body {
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: url('../img/wood-background.jpg');
+  padding: 0;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../img/wood-background.jpg');
 }
 header {
-    background-color: #2e1403;
-    color: wheat;
-    text-align: center; 
-    padding: 10px; 
+  background-color: #2e1403;
+  color: wheat;
+  text-align: center;
+  padding: 10px;
 }
 
 main {
-    display: flex !important;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer {
-    background-color: #2e1403; 
-    color: wheat; 
-    text-align: center;
-    padding: 10px; 
+  background-color: #2e1403;
+  color: wheat;
+  text-align: center;
+  padding: 10px;
 }
-
 
 a {
-    text-decoration: none;
-    color: wheat;
+  text-decoration: none;
+  color: wheat;
 }
 
-
 .btn-footer {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #2e1403;
-    background-color: wheat;
-    border: none;
-    border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #2e1403;
+  background-color: wheat;
+  border: none;
+  border-radius: 5px;
 }

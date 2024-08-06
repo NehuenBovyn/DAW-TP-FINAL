@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP FINAL DAW</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/styleContacto.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleContacto.css">
+    <link rel="stylesheet" href="../css/styleMobile.css">
 </head>
+
 <body>
     <header>
-        <nav class="navbar">
-            <ul class="lista-navbar">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../pages/puntuacion.html">Puntuación</a></li>
-                <li><a href="../pages/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1><a href="../index.html">Juego Boogle</a></h1>
     </header>
     <main>
-        <section class="contacto">
-            <h1>Contáctenos <span id="nombreRealTime"></span></h1>
-        </section>
+
         <section class="contacto" id="contactoFormulario">
+            <h1 class="title-contact">Contáctenos <span id="nombreRealTime"></span></h1>
             <form action="mailto:destinatario@correo.com" method="post" id="formulario" novalidate>
                 <div class="form-group">
-                    <label for="nombreid">Nombre:</label>
+                    <label for="nombreid">Nombre</label>
                     <input type="text" id="nombreid" name="nombre" placeholder="Ingrese su nombre">
                     <p class="error-message" id="nombreError"></p>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="correoid">Email:</label>
+                    <label for="correoid">Email</label>
                     <input type="email" id="correoid" name="email" placeholder="Ingrese su email">
                     <p class="error-message" id="correoError"></p>
                 </div>
 
                 <div class="form-group">
-                    <label for="mensajeid">Mensaje:</label>
+                    <label for="mensajeid">Mensaje</label>
                     <textarea name="mensaje" id="mensajeid" placeholder="Ingrese su mensaje"></textarea>
                     <p class="error-message" id="mensajeError"></p>
                 </div>
-                    
+
                 <div class="button-container">
                     <button type="submit">Enviar</button>
                 </div>
             </form>
         </section>
     </main>
-    <footer>
+    <footer class="footer-content">
+        <p>&copy; 2024 Bovyn Nehuen y Meynet Luz. Universidad Interamericana UAI</p>
+        <p>Trabajo práctico final DAW</p>
+        <div>
+            <button class="btn-footer" id="github-btn">Ver en GitHub</button>
+            <button class="btn-footer" id="contacto-btn"
+                onclick="redirectToOtherPag('contacto-btn', './pages/contacto.html')">Contacto</button>
+        </div>
     </footer>
     <script src="../js/scriptContactanos.js"></script>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>

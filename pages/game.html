@@ -3,9 +3,12 @@
 
 <head>
   <title>TP FINAL DAW</title>
-  <link rel="stylesheet" type="text/css" href="../css/styleGame.css">
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styleGame.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/styleMobile.css">
 </head>
 
 <body>
@@ -45,6 +48,7 @@
         </div>
       </div>
       <div class="game-table">
+
         <div class="col-game-1 tables-game">
           <div>
             <h2 class="title-table">Mi puntuación actual: <span id="points">0</span></h2>
@@ -64,6 +68,13 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class="col-game-3 mobile-find-word">
+          <div class="tables-game">
+            <h2 class="title-table">Palabras encontradas</h2>
+            <ul id="words-found">
+            </ul>
           </div>
         </div>
         <div class="col-game-2 tables-game">
@@ -87,7 +98,7 @@
             <h2 class="title-table">Temporizador</h2>
             <div id="timer">0:00</div>
           </div>
-          <div class="tables-game">
+          <div class="tables-game desktop-find-word">
             <h2 class="title-table">Palabras encontradas</h2>
             <ul id="words-found">
             </ul>

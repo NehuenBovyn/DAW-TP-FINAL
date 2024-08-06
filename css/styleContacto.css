@@ -1,93 +1,85 @@
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main {
-    width: 100%;
-    max-width: 600px;
-    padding: 1em;
-}
-
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .contacto {
-    margin-bottom: 1em;
-    text-align: center;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-group {
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: wheat;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.title-contact {
+  background-color: wheat;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #422800;
 }
 
 .form-group label {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
 
-.form-group input, .form-group textarea {
-    padding: 0.75em;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
+.form-group input,
+.form-group textarea {
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-    background-color: wheat;
-    border: 2px solid #422800;
-    border-radius: 5px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background-color: wheat;
+  border: 2px solid #422800;
+  border-radius: 5px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #422800;
-    color: wheat;
+  background-color: #422800;
+  color: wheat;
 }
-  
+
 .button:active {
-    box-shadow: #422800 2px 2px 0 0;
-    transform: translate(2px, 2px);
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
 }
 
 .error-message {
-    color: red;
-    font-size: 0.9em;
+  color: red;
+  font-size: 0.9em;
 }
 
-input.error, textarea.error {
-    border: 2px solid red;
+input.error,
+textarea.error {
+  border: 2px solid red;
 }
 
-input.success, textarea.success {
-    border: 2px solid green;
-}
-
-header, footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+input.success,
+textarea.success {
+  border: 2px solid green;
 }

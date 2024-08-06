@@ -164,6 +164,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 .player-info {
@@ -259,10 +260,25 @@ button {
   flex-direction: column;
   gap: 1rem;
 }
+.mobile-find-word {
+  display: none;
+}
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .desktop-find-word {
+    display: none;
+  }
+  .mobile-find-word {
+    display: block;
+  }
   .button-start {
     min-width: 120px;
     padding: 0 25px;
+  }
+  .player-info {
+    width: auto;
+  }
+  .game-table {
+    flex-flow: column-reverse wrap;
   }
 }
