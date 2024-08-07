@@ -8,7 +8,7 @@ body {
 }
 header {
   background-color: #2e1403;
-  color: wheat;
+  color: #F5DEB3;
   text-align: center;
   padding: 10px;
 }
@@ -23,14 +23,14 @@ main {
 
 footer {
   background-color: #2e1403;
-  color: wheat;
+  color: #F5DEB3;
   text-align: center;
   padding: 10px;
 }
 
 a {
   text-decoration: none;
-  color: wheat;
+  color: #F5DEB3;
 }
 
 .btn-footer {
@@ -38,7 +38,7 @@ a {
   font-size: 16px;
   cursor: pointer;
   color: #2e1403;
-  background-color: wheat;
+  background-color: #F5DEB3;
   border: none;
   border-radius: 5px;
 }

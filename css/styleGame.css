@@ -4,7 +4,6 @@ button {
   margin: 10px;
 }
 
-#shuffle-message,
 #submit-message {
   display: none;
   color: #333;
@@ -34,7 +33,7 @@ button {
 
 #time-up-modal button {
   background-color: #422800;
-  color: wheat;
+  color: #F5DEB3;
   border: none;
   padding: 10px 20px;
   font-size: 18px;
@@ -43,18 +42,18 @@ button {
 }
 
 #time-up-modal button:hover {
-  background-color: wheat;
+  background-color: #F5DEB3;
   color: #422800;
 }
 
 .btn-game {
   background-color: #422800;
-  color: wheat;
+  color: #F5DEB3;
   border: 1px solid #422800;
 }
 
 .btn-game:hover {
-  background-color: wheat;
+  background-color: #F5DEB3;
   color: #422800;
   border: 1px solid #422800;
 }
@@ -90,7 +89,7 @@ button {
   height: 60px;
   width: 60px;
   background-color: #422800;
-  color: wheat;
+  color: #F5DEB3;
   border: 1px solid #050505;
   font-size: 24px;
 }
@@ -130,7 +129,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: wheat;
+  background-color: #F5DEB3;
   padding: 20px;
   width: 300px;
   max-width: 80%;
@@ -174,7 +173,7 @@ button {
   justify-content: space-between;
   width: 100%;
   padding: 10px;
-  background-color: wheat;
+  background-color: #F5DEB3;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -185,7 +184,7 @@ button {
 }
 
 .button-start {
-  background-color: wheat;
+  background-color: #F5DEB3;
   border: 2px solid #422800;
   border-radius: 5px;
   box-shadow: #422800 4px 4px 0 0;
@@ -205,7 +204,7 @@ button {
 
 .button-start:hover {
   background-color: #422800;
-  color: wheat;
+  color: #F5DEB3;
 }
 
 .button-start:active {
@@ -214,13 +213,13 @@ button {
 }
 
 .error-message {
-  color: red;
+  color: #FF0000;
 
   font-size: 0.9em;
 }
 
 .show-message {
-  color: red;
+  color: #FF0000;
   font-weight: 600;
   font-size: 0.9em;
   margin-top: 10px;
@@ -241,7 +240,7 @@ button {
 .tables-game {
   display: flex;
   flex-direction: column;
-  background-color: wheat;
+  background-color: #F5DEB3;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   padding: 10px;

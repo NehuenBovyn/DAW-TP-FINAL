@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var shuffleBtn = document.getElementById('shuffle-btn');
   var submitWordBtn = document.getElementById('submit-word-btn');
   var pointsDisplay = document.getElementById('points');
-  var wordsFoundList = document.getElementById('words-found');
   var points = 0;
   var selectedButtons = [];
   var wordsFound = [];
-  var shuffleMessage = document.getElementById('shuffle-message');
 
   function generateGrid() {
     grid.innerHTML = '';
@@ -148,11 +146,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function updateWordsFoundList() {
-    wordsFoundList.innerHTML = '';
+    var wordsFoundListMobile = document.getElementById('words-found-mobile');
+    var wordsFoundListDesktop = document.getElementById('words-found-desktop');
+    wordsFoundListMobile.innerHTML = '';
+    wordsFoundListDesktop.innerHTML = '';
     wordsFound.forEach(function (word) {
-      var listItem = document.createElement('li');
-      listItem.textContent = word;
-      wordsFoundList.appendChild(listItem);
+      var listItemMobile = document.createElement('li');
+      var listItemDesktop = document.createElement('li');
+      listItemMobile.textContent = word;
+      listItemDesktop.textContent = word;
+      wordsFoundListMobile.appendChild(listItemMobile);
+      wordsFoundListDesktop.appendChild(listItemDesktop);
     });
   }
 
@@ -168,10 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
   shuffleBtn.addEventListener('click', function () {
     generateGrid();
     wordInput.value = '';
-    shuffleMessage.classList.add('show-message');
-    setTimeout(function () {
-      shuffleMessage.classList.remove('show-message');
-    }, 2000);
+    setTimeout(function () {}, 2000);
   });
 
   submitWordBtn.addEventListener('click', function () {
@@ -200,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   var restartBtn = document.getElementById('restart-btn');
+
   restartBtn.addEventListener('click', function () {
     points = 0;
     pointsDisplay.textContent = points;
@@ -208,6 +210,6 @@ document.addEventListener('DOMContentLoaded', function () {
     generateGrid();
     timeUpModal.classList.remove('active');
   });
-
+  
   generateGrid();
 });

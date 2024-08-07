@@ -5,7 +5,7 @@
   justify-content: center;
 }
 .button-start {
-  background-color: wheat;
+  background-color: #F5DEB3;
   border: 2px solid #422800;
   border-radius: 5px;
   box-shadow: #422800 4px 4px 0 0;
@@ -25,7 +25,7 @@
 
 .button-start:hover {
   background-color: #422800;
-  color: wheat;
+  color: #F5DEB3;
 }
 
 .button-start:active {

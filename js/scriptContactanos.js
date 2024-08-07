@@ -1,34 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('formulario');
-    var nombre = document.getElementById('nombreid');
-    var email = document.getElementById('correoid');
-    var mensaje = document.getElementById('mensajeid');
-
-    var nombreError = document.getElementById('nombreError');
-    var correoError = document.getElementById('correoError');
-    var mensajeError = document.getElementById('mensajeError');
-    var nombreRealTime = document.getElementById('nombreRealTime');
-
-    nombre.addEventListener('input', function() {
-        nombreRealTime.textContent = nombre.value;
-    });
+    var name = document.getElementById('nombre-id');
+    var email = document.getElementById('correo-id');
+    var message = document.getElementById('mensaje-id');
+    var nameError = document.getElementById('nombre-error');
+    var correoError = document.getElementById('correo-error');
+    var mensajeError = document.getElementById('mensaje-error');
     
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-
         var valid = true;
-
-        if (nombre.value.trim().length < 3 || !/^[a-zA-Z0-9\s]+$/.test(nombre.value)) {
-            nombre.classList.add('error');
-            nombre.classList.remove('success');
-            nombreError.textContent = 'El nombre debe ser alfanumérico y tener al menos 3 caracteres.';
+        if (name.value.trim().length < 3 || !/^[a-zA-Z0-9\s]+$/.test(name.value)) {
+            name.classList.add('error');
+            name.classList.remove('success');
+            nameError.textContent = 'El nombre debe ser alfanumérico y tener al menos 3 caracteres.';
             valid = false;
         } else {
-            nombre.classList.remove('error');
-            nombre.classList.add('success');
-            nombreError.textContent = '';
+            name.classList.remove('error');
+            name.classList.add('success');
+            nameError.textContent = '';
         }
-
         if (email.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
             email.classList.add('error');
             email.classList.remove('success');
@@ -39,18 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
             email.classList.add('success');
             correoError.textContent = '';
         }
-
-        if (mensaje.value.trim().length <= 5) {
-            mensaje.classList.add('error');
-            mensaje.classList.remove('success');
+        if (message.value.trim().length <= 5) {
+            message.classList.add('error');
+            message.classList.remove('success');
             mensajeError.textContent = 'El mensaje debe tener más de 5 caracteres.';
             valid = false;
         } else {
-            mensaje.classList.remove('error');
-            mensaje.classList.add('success');
+            message.classList.remove('error');
+            message.classList.add('success');
             mensajeError.textContent = '';
         }
-
         if (valid) {
             form.submit();
         }

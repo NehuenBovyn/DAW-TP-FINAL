@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Declaraciones
   var overlay = document.querySelector('.popup-overlay');
   var timerDisplay = document.getElementById('timer');
   var restartBtn = document.getElementById('restart-btn');
@@ -9,14 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var playerInfo = document.querySelector('.player-info');
   var gameTable = document.querySelector('.game-table');
   var timeUpModal = document.getElementById('time-up-modal');
-
-  showPopUp();
-
-  if (closeButton) {
-    closeButton.addEventListener('click', function () {
-      closePopUp();
-    });
-  }
 
   function showPopUp() {
     overlay.style.display = 'block';
@@ -80,19 +71,26 @@ document.addEventListener('DOMContentLoaded', function () {
     errorMessageDiv.textContent = '';
     document.getElementById('player-name').value = '';
     document.getElementById('time-limit').value = '60';
-    var wordsFoundList = document.getElementById('words-found');
-    wordsFoundList.innerHTML = '';
+    var wordsFoundListMobile = document.getElementById('words-found-mobile');
+    var wordsFoundListDesktop = document.getElementById('words-found-desktop');
+    wordsFoundListMobile.innerHTML = '';
+    wordsFoundListDesktop.innerHTML = '';
     timeUpModal.style.display = 'none';
     showPopUp();
     loadAndDisplayScores();
   }
 
+  showPopUp();
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      closePopUp();
+    });
+  }
   overlay.addEventListener('click', function (event) {
     if (event.target === overlay) {
       closePopUp();
     }
   });
-
   buttonStart.addEventListener('click', function () {
     var playerName = document.getElementById('player-name').value;
     var timeLimitSelect = document.getElementById('time-limit');
@@ -111,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
     startCountdown(timeLimit);
     loadAndDisplayScores();
   });
-
   restartBtn.addEventListener('click', function () {
     resetGame();
   });

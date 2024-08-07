@@ -18,13 +18,13 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: wheat;
+  background-color: #F5DEB3;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .title-contact {
-  background-color: wheat;
+  background-color: #F5DEB3;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   color: #422800;
@@ -49,7 +49,7 @@ form {
 }
 
 button {
-  background-color: wheat;
+  background-color: #F5DEB3;
   border: 2px solid #422800;
   border-radius: 5px;
   box-shadow: #422800 4px 4px 0 0;
@@ -61,7 +61,7 @@ button {
 
 button:hover {
   background-color: #422800;
-  color: wheat;
+  color: #F5DEB3;
 }
 
 .button:active {
@@ -70,16 +70,16 @@ button:hover {
 }
 
 .error-message {
-  color: red;
+  color: #FF0000;
   font-size: 0.9em;
 }
 
 input.error,
 textarea.error {
-  border: 2px solid red;
+  border: 2px solid #FF0000;
 }
 
 input.success,
 textarea.success {
-  border: 2px solid green;
+  border: 2px solid #008000;
 }
