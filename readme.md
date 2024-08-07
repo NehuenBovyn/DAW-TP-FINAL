@@ -16,6 +16,7 @@ Este proyecto consiste en la implementación de un juego de Boggle utilizando HT
 
 El proyecto está organizado de la siguiente manera:
 
+```plaintext
 DAW-TP-FINAL/
 ├── index.html           # Archivo principal HTML
 ├── css/                 # Carpeta con archivos CSS
@@ -25,6 +26,7 @@ DAW-TP-FINAL/
 ├── js/                  # Carpeta con archivos JavaScript
 │   └── main.js          # Archivo JavaScript principal
 └── pages/               # Carpeta con páginas adicionales
+```
 
 ## Tecnologías Utilizadas
 
@@ -45,7 +47,9 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 2. Clona el repositorio:
 
-cd DAW-TP-FINAL
+   ```bash
+   cd DAW-TP-FINAL
+   ```
 
 3. Abre el archivo index.html en tu navegador preferido.
 
