@@ -1,20 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   redirectToGithub();
   redirectToOtherPag('btn-start', './pages/game.html');
-  const contactoBtn = document.getElementById('contacto-btn');
-  if (contactoBtn) {
-      contactoBtn.addEventListener('click', function(event) {
-          const currentPath = window.location.pathname;
-          const contactPath = '/pages/contacto.html';
-  
-          if (currentPath !== contactPath) {
-              event.preventDefault(); 
-              window.location.href = contactPath; 
-          }
-      });
-  }
 });
-
 
 function redirectToGithub() {
   const githubBtn = document.getElementById('github-btn');
